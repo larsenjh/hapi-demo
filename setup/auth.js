@@ -28,9 +28,11 @@ module.exports.configureToken = function(server) {
 				var creds = {
 					sessId: result._id,
 					user: result.user,
-					scope: [ result.user.role ]
+					scope: [ result.user.role ] // this value matches the scope: param in the route config
 				};
-				callback(null, true, creds)
+				
+				// the creds variable will be accessible in all downstream handlers as request.auth.credentials
+				callback(null, true, creds);
 			});
 		}
 	});

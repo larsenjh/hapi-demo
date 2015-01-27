@@ -30,6 +30,7 @@ module.exports =  function(config) {
 				logResponsePayload: true
 			}
 		},
+		// mongo plugin to easily access mongo at server.plugins['hapi-mongo']
 		{
 			register: require('hapi-mongodb'),
 			options: config.mongodb

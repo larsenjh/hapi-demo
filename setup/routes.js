@@ -1,6 +1,7 @@
 var handlers = require('../handlers');
 var joi = require('joi');
 
+// ideally these routes would be organized in separate files instead of one massive file
 module.exports = [
 	{
 		path: '/api/users',
