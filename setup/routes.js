@@ -75,6 +75,24 @@ module.exports = [
 			notes: "Use this endpoint to log into the system.",
 			tags: ['api', 'sess', 'login']
 		}
-	}
+	},
 	
+	// test handler behavior
+	{
+		path: '/api/err',
+		method: 'GET',
+		handler: handlers.other.generateSyncError,
+		config: {
+			auth: false
+		}
+	},
+
+	{
+		path: '/api/errAsync',
+		method: 'GET',
+		handler: handlers.other.generateAsyncError,
+		config: {
+			auth: false
+		}
+	}
 ];

@@ -5,13 +5,15 @@ var auth = require('./setup/auth');
 var _ = require('lodash');
 
 // create the server, set default behavior of connections and routes
-var server = new hapi.Server({
+var server = new hapi.Server({ // this default object is deep extended at the time routes/policies are declared
 	connections: {
 		routes: {
 			cors: true
 		}
 	}
 });
+// can modify the defaults later using server.connections[].settings
+
 // create connections
 server.connection({port: 9090});
 // TODO: demonstrate multiple connections
@@ -47,3 +49,5 @@ server.register(plugins(server.CONFIG), function (err) {
 		server.log(['status'], 'Server running at: ' + server.info.uri);
 	});
 });
+
+module.exports = server;

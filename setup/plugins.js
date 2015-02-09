@@ -6,7 +6,7 @@ module.exports =  function(config) {
 		{
 			register: require('good'),
 			options: {
-				opsInterval: 20000,
+				opsInterval: 60000,
 				reporters: [
 					{
 						reporter: require('good-console'),
@@ -38,6 +38,9 @@ module.exports =  function(config) {
 		// setup bearer token auth
 		{
 			register: require('hapi-auth-bearer-token')
+		},
+		{
+			register: require('tv')
 		}
 	];
 };
